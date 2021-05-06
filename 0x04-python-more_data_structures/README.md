@@ -1,1 +1,1 @@
-*Project about Python - More Data Structures: Set, Dictionary *
+*Project about Python - More Data Structures: Set, Dictionary*
