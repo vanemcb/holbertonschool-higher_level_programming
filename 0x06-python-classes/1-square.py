@@ -5,10 +5,5 @@
 
 class Square:
     def __init__(self, size):
-        """ Initialization method.
-
-        Args:
-            size (int): square size.
-
-        """
+        """ Initialization method."""
         self.__size = size
