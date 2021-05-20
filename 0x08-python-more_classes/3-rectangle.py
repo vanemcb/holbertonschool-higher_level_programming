@@ -5,18 +5,21 @@ Class that defines a rectangle.
 
 
 class Rectangle:
-    """Class square"""
+    """Class Rectangle"""
 
     def __init__(self, width=0, height=0):
+        """ Object Ractangle initialization """
         self.__width = width
         self.__height = height
 
     @property
     def width(self):
+        """ Instance method to get the attribute width """
         return self.__width
 
     @width.setter
     def width(self, value):
+        """ Instance method to set the attribute width """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -26,10 +29,12 @@ class Rectangle:
 
     @property
     def height(self):
+        """ Instance method to get the attribute height """
         return self.__height
 
     @height.setter
     def height(self, value):
+        """ Instance method to set the attribute height """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value < 0:
@@ -38,9 +43,11 @@ class Rectangle:
             self.__height = value
 
     def area(self):
+        """ Instance method to compute the area rectangle """
         return self.__width * self.__height
 
     def perimeter(self):
+        """ Instance method to compute the perimeter rectangle """
         if self.__width == 0 or self.__height == 0:
             peri = 0
         else:
