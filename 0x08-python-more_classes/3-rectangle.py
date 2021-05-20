@@ -57,11 +57,12 @@ class Rectangle:
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             display_rectangle = ""
-        display = []
-        for row in range(self.__height):
-            row_display = ""
-            for column in range(self.__width):
-                row_display += "#"
-            display.append(row_display)
-        display_rectangle = "\n".join(display)
+        else:
+            display = []
+            for row in range(self.__height):
+                row_display = ""
+                for column in range(self.__width):
+                    row_display += "#"
+                display.append(row_display)
+            display_rectangle = "\n".join(display)
         return display_rectangle
