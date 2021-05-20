@@ -48,6 +48,8 @@ class Rectangle:
         return peri
 
     def __str__(self):
+        if self.__width == 0 or self.__height == 0:
+            display_rectangle = ""
         display = []
         for row in range(self.__height):
             row_display = ""
