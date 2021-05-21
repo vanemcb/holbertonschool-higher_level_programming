@@ -1,0 +1,1 @@
+*Project about Python - Everything is object*
