@@ -1,0 +1,84 @@
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+First import
+``add_integer`` from the ``0-add_integer`` module:
+
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+Now use it:
+
+    >>> add_integer(10, 53)
+    63
+
+    >>> add_integer(67.5, -10.45)
+    57
+
+    >>> add_integer(14, -10.45)
+    4
+
+    >>> add_integer(35.5, -13)
+    22
+
+    >>> a = [1, 2, 3]
+    >>> add_integer(a, -13)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> b = [1, 2, 3]
+    >>> add_integer(57.6, b)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+    >>> add_integer("hola", 423)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(-78365, "string")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+    >>> a = {1: 'hola'}
+    >>> add_integer(a, -13)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> b = {1: 'hola'}
+    >>> add_integer(236, b)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+    >>> add_integer("", 42.28484)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(, 2)
+    Traceback (most recent call last):
+    ...
+    SyntaxError: invalid syntax
+
+    >>> add_integer(2, )
+    100
+
+    >>> add_integer(2)
+    100
+
+    >>> add_integer(-49, c)
+    Traceback (most recent call last):
+    ...
+    NameError: name 'c' is not defined
+
+    >>> add_integer(c, 478.123)
+    Traceback (most recent call last):
+    ...
+    NameError: name 'c' is not defined
