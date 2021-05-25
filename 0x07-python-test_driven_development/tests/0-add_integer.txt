@@ -14,6 +14,9 @@ Now use it:
     >>> add_integer(10, 53)
     63
 
+    >>> add_integer(-10, -53)
+    -63
+
     >>> add_integer(67.5, -10.45)
     57
 
@@ -22,6 +25,9 @@ Now use it:
 
     >>> add_integer(35.5, -13)
     22
+
+    >>> add_integer(4**2, 10)
+    26
 
     >>> a = [1, 2, 3]
     >>> add_integer(a, -13)
@@ -67,6 +73,11 @@ Now use it:
     ...
     SyntaxError: invalid syntax
 
+    >>> add_integer(,)
+    Traceback (most recent call last):
+    ...
+    SyntaxError: invalid syntax
+
     >>> add_integer(2, )
     100
 
@@ -82,3 +93,49 @@ Now use it:
     Traceback (most recent call last):
     ...
     NameError: name 'c' is not defined
+
+    >>> add_integer(False)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    #pep8 style
+    >>> import os
+    >>> os.popen("pep8 0-add_integer.py").read()
+    ''
+
+    #Module comments
+    >>> len_comment = len(__import__("0-add_integer").__doc__)
+    >>> len_comment > 4
+    True
+
+    #Function comments
+    >>> len_comment = len(__import__("0-add_integer").add_integer.__doc__)
+    >>> len_comment > 2
+    True
+
+    #Checking README file
+    >>> import os
+    >>> os.path.isfile('README.md')
+    True
+
+    #Checking executable file
+    >>> import os
+    >>> current_path = os.getcwd() + "/0-add_integer.py"
+    >>> os.access(current_path, os.X_OK)
+    True
+
+    #Checking first line of file
+    >>> with open("0-add_integer.py", "r") as file:
+    ...     first_line = file.readline()
+    ...
+    >>> first_line == '#!/usr/bin/python3\n'
+    True
+
+    #Checking last line of file
+    >>> with open("0-add_integer.py", "r") as file:
+    ...     for last_line in file:
+    ...             pass
+    ...
+    >>> last_line[len(last_line) - 1] == '\n'
+    True
