@@ -1,0 +1,53 @@
+The ``3-say_my_name`` module
+======================
+
+Using ``say_my_name``
+-------------------
+
+First import
+``say_my_name`` from the ``3-say_my_name`` module:
+
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Now use it:
+
+    #pep8 style
+    >>> import os
+    >>> os.popen("pep8 3-say_my_name.py").read()
+    ''
+
+    #Module comments
+    >>> len_comment = len(__import__("3-say_my_name").__doc__)
+    >>> len_comment > 4
+    True
+
+    #Function comments
+    >>> len_comment = len(__import__("3-say_my_name").say_my_name.__doc__)
+    >>> len_comment > 2
+    True
+
+    #Checking README file
+    >>> import os
+    >>> os.path.isfile('README.md')
+    True
+
+    #Checking executable file
+    >>> import os
+    >>> current_path = os.getcwd() + "/3-say_my_name.py"
+    >>> os.access(current_path, os.X_OK)
+    True
+
+    #Checking first line of file
+    >>> with open("3-say_my_name.py", "r") as file:
+    ...     first_line = file.readline()
+    ...
+    >>> first_line == '#!/usr/bin/python3\n'
+    True
+
+    #Checking last line of file
+    >>> with open("3-say_my_name.py", "r") as file:
+    ...     for last_line in file:
+    ...             pass
+    ...
+    >>> last_line[len(last_line) - 1] == '\n'
+    True
