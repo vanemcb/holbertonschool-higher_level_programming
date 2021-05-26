@@ -143,3 +143,6 @@ Now use it:
     Traceback (most recent call last):
     ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[4]], 2)
+    [[2.0]]

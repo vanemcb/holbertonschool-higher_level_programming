@@ -27,7 +27,7 @@ def matrix_divided(matrix, div):
     if matrix == [] or matrix == [[]]:
         raise TypeError(error1)
 
-    if len(matrix) > 1:
+    if len(matrix) > 0:
         len_row = len(matrix[0])
 
     for row in range(len(matrix)):
