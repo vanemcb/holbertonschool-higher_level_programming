@@ -23,7 +23,8 @@ def text_indentation(text):
         text_final = text_final + text[index]
         if text[index] == "." or text[index] == "?" or text[index] == ":":
             text_final = text_final + "\n\n"
-            index += 1
+            if index < len(text) - 1 and text[index + 1] == " ":
+                index += 1
         index += 1
 
     print(text_final, end="")
