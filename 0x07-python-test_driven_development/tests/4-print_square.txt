@@ -85,7 +85,7 @@ Now use it:
     >>> print_square(-156)
     Traceback (most recent call last):
     ...
-    ValueError: Size must be >= 0
+    ValueError: size must be >= 0
 
     >>> print_square(0)
 
