@@ -100,3 +100,12 @@ Now use it:
     .
     <BLANKLINE>
     Muy bien
+
+    >>> text_indentation("Holberton. School? How are you: John")
+    Holberton.
+    <BLANKLINE>
+    School?
+    <BLANKLINE>
+    How are you:
+    <BLANKLINE>
+    John
