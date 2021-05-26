@@ -51,3 +51,53 @@ Now use it:
     ...
     >>> last_line[len(last_line) - 1] == '\n'
     True
+
+    >>> print_square(-1.36)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    >>> print_square(20.4)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    >>> print_square("five")
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    >>> print_square("")
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    >>> print_square(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    >>> print_square([1, 2])
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    >>> print_square(-156)
+    Traceback (most recent call last):
+    ...
+    ValueError: Size must be >= 0
+
+    >>> print_square(0)
+
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+    >>> print_square(1)
+    #
+
+    >>> print_square(2)
+    ##
+    ##
