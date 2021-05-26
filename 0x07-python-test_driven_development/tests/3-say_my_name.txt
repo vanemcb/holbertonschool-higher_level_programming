@@ -51,3 +51,29 @@ Now use it:
     ...
     >>> last_line[len(last_line) - 1] == '\n'
     True
+
+    >>> say_my_name(6, "Castro")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name(None, "Castro")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Natalia", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name("Natalia", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name("Julian")
+    My name is Julian 
+
+    >>> say_my_name("","")
+    My name is  
