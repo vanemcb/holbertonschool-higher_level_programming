@@ -27,6 +27,9 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
+    def area(self):
+        return self.__width * self.__height
+
     @property
     def width(self):
         return self.__width
