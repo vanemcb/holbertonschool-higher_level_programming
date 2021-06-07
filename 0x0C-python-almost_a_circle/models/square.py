@@ -30,26 +30,14 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
 
+        list_attr = ["id", "size", "x", "y"]
+
         if len(args) != 0:
             for index, arg in enumerate(args):
-                if index == 0:
-                    self.id = arg
-                if index == 1:
-                    self.width = arg
-                if index == 2:
-                    self.x = arg
-                if index == 3:
-                    self.y = arg
+                setattr(self, list_attr[index], arg)
         else:
             for key, value in kwargs.items():
-                if key == "id":
-                    self.id = value
-                if key == "size":
-                    self.width = value
-                if key == "x":
-                    self.x = value
-                if key == "y":
-                    self.y = value
+                setattr(self, key, value)
 
     def to_dictionary(self):
         my_dict = {
