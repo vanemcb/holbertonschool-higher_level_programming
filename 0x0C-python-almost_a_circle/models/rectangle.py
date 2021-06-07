@@ -44,18 +44,32 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, *args):
-        for index, arg in enumerate(args):
-            if index == 0:
-                self.id = arg
-            if index == 1:
-                self.__width = arg
-            if index == 2:
-                self.__height = arg
-            if index == 3:
-                self.__x = arg
-            if index == 4:
-                self.__y = arg
+    def update(self, *args, **kwargs):
+
+        if len(args) != 0:
+            for index, arg in enumerate(args):
+                if index == 0:
+                    self.id = arg
+                if index == 1:
+                    self.__width = arg
+                if index == 2:
+                    self.__height = arg
+                if index == 3:
+                    self.__x = arg
+                if index == 4:
+                    self.__y = arg
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                if key == "width":
+                    self.__width = value
+                if key == "height":
+                    self.__height = value
+                if key == "x":
+                    self.__x = value
+                if key == "y":
+                    self.__y = value
 
     @property
     def width(self):
