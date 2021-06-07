@@ -28,9 +28,28 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        filename = type(list_objs[0]).__name__ + ".json"
+        filename = cls.__name__ + ".json"
         list_dict = []
         with open(filename, "w", encoding="utf-8") as file:
             for dicts in list_objs:
                 list_dict.append(cls.to_dictionary(dicts))
             file.write(json.dumps(list_dict))
+
+    @classmethod
+    def create(cls, **dictionary):
+        dummy = cls(4, 5)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        filename = cls.__name__ + ".json"
+        my_list = []
+        try:
+            with open(filename, "r", encoding="utf-8") as file:
+                my_list = cls.from_json_string(file.read())
+            for index in range(len(my_list)):
+                my_list[index] = cls.create(**my_list[index])
+        except:
+            pass
+        return my_list
