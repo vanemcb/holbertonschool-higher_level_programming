@@ -9,40 +9,27 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
-        attributes = {"width": width, "height": height, "x": x, "y": y}
-        for k, v in attributes.items():
-            if type(v) != int:
-                raise TypeError(k + " must be an integer")
-        if width <= 0:
-            raise ValueError("width must be > 0")
-        if height <= 0:
-            raise ValueError("height must be > 0")
-        if x < 0:
-            raise ValueError("x must be >= 0")
-        if y < 0:
-            raise ValueError("y must be >= 0")
-
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     def area(self):
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
-        for z in range(self.__y):
+        for z in range(self.y):
             print()
-        for x in range(self.__height):
-            for y in range(self.__x):
+        for x in range(self.height):
+            for y in range(self.x):
                 print(" ", end="")
-            for i in range(self.__width):
+            for i in range(self.width):
                 print("#", end="")
             print()
 
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.__x, self.__y, self.__width, self.__height)
+            self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
 
@@ -51,30 +38,34 @@ class Rectangle(Base):
                 if index == 0:
                     self.id = arg
                 if index == 1:
-                    self.__width = arg
+                    self.width = arg
                 if index == 2:
-                    self.__height = arg
+                    self.height = arg
                 if index == 3:
-                    self.__x = arg
+                    self.x = arg
                 if index == 4:
-                    self.__y = arg
+                    self.y = arg
         else:
             for key, value in kwargs.items():
                 if key == "id":
                     self.id = value
                 if key == "width":
-                    self.__width = value
+                    self.width = value
                 if key == "height":
-                    self.__height = value
+                    self.height = value
                 if key == "x":
-                    self.__x = value
+                    self.x = value
                 if key == "y":
-                    self.__y = value
+                    self.y = value
 
     def to_dictionary(self):
         my_dict = {
-            "id": self.id, "width": self.__width, "height": self.__height,
-            "x": self.__x, "y": self.__y}
+                    "id": self.id,
+                    "width": self.width,
+                    "height": self.height,
+                    "x": self.x,
+                    "y": self.y
+                    }
         return my_dict
 
     @property

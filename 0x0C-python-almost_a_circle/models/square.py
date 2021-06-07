@@ -8,7 +8,6 @@ class Square(Rectangle):
     """ Class Square """
 
     def __init__(self, size, x=0, y=0, id=None):
-        self.__size = size
         Rectangle.__init__(self, size, size, x, y, id)
 
     def __str__(self):
@@ -17,7 +16,7 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, value):
