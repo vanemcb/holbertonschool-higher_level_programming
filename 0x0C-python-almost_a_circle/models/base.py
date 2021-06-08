@@ -16,18 +16,27 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """  Static method that returns the JSON string
+        representation of list_dictionaries """
+
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @staticmethod
     def from_json_string(json_string):
+        """ Static method that returns the list of the
+        JSON string representation json_string """
+
         if json_string is None or len(json_string) == 0:
             return "[]"
         return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """ Class method hat writes the JSON string
+        representation of list_objs to a file """
+
         filename = cls.__name__ + ".json"
         list_dict = []
         with open(filename, "w", encoding="utf-8") as file:
@@ -37,12 +46,16 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """ Class method that returns an instance
+        with all attributes already set """
+
         dummy = cls(4, 5)
         dummy.update(**dictionary)
         return dummy
 
     @classmethod
     def load_from_file(cls):
+        """ Class method that returns a list of instances """
         filename = cls.__name__ + ".json"
         my_list = []
         try:
