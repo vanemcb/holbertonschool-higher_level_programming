@@ -17,23 +17,6 @@ class Square(Rectangle):
         return "[Square]({}) {}/{} - {}".format(
             self.id, self.x, self.y, self.width)
 
-    @property
-    def size(self):
-        """ Getter size  """
-        return self.width
-
-    @size.setter
-    def size(self, value):
-        """ Setter size """
-
-        if type(value) != int:
-            raise TypeError("width must be an integer")
-        elif value <= 0:
-            raise ValueError("width must be > 0")
-        else:
-            self.width = value
-            self.height = value
-
     def update(self, *args, **kwargs):
         """ Method that assigns a key/value argument to attributes """
 
