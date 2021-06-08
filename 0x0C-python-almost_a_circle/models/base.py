@@ -29,7 +29,7 @@ class Base:
         JSON string representation json_string """
 
         if json_string is None or len(json_string) == 0:
-            json_string = []
+            return []
         return json.loads(json_string)
 
     @classmethod
