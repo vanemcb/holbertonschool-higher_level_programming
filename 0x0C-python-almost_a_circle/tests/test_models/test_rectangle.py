@@ -17,4 +17,6 @@ class TestClassRectangle(unittest.TestCase):
         pass
 
     def test_pep8_style(self):
-        pass
+        import os
+        string = os.popen("base.py").read()
+        self.assertTrue(string == "")
