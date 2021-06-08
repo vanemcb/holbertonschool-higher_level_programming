@@ -11,15 +11,21 @@ class Square(Rectangle):
         Rectangle.__init__(self, size, size, x, y, id)
 
     def __str__(self):
+        """ Method that return the following format string:
+        [Square] (<id>) <x>/<y> - <size> """
+
         return "[Square]({}) {}/{} - {}".format(
             self.id, self.x, self.y, self.width)
 
     @property
     def size(self):
+        """ Getter size  """
         return self.width
 
     @size.setter
     def size(self, value):
+        """ Setter size """
+
         if type(value) != int:
             raise TypeError("width must be an integer")
         elif value <= 0:
@@ -29,6 +35,7 @@ class Square(Rectangle):
             self.height = value
 
     def update(self, *args, **kwargs):
+        """ Method that assigns a key/value argument to attributes """
 
         list_attr = ["id", "size", "x", "y"]
 
@@ -40,6 +47,8 @@ class Square(Rectangle):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        """ Method that returns the dictionary representation
+        of a Square """
         my_dict = {
             "id": self.id, "size": self.width, "x": self.x, "y": self.y}
         return my_dict
