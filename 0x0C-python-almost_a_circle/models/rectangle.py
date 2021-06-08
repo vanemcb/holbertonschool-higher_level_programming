@@ -9,13 +9,13 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     def area(self):
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         for z in range(self.y):
@@ -55,7 +55,7 @@ class Rectangle(Base):
     @property
     def width(self):
         """ Getter width """
-        return self.width
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -65,12 +65,12 @@ class Rectangle(Base):
         elif value <= 0:
             raise ValueError("width must be > 0")
         else:
-            self.width = value
+            self.__width = value
 
     @property
     def height(self):
         """ Getter height """
-        return self.height
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -80,12 +80,12 @@ class Rectangle(Base):
         elif value <= 0:
             raise ValueError("height must be > 0")
         else:
-            self.height = value
+            self.__height = value
 
     @property
     def x(self):
         """ Getter x """
-        return self.x
+        return self.__x
 
     @x.setter
     def x(self, value):
@@ -95,12 +95,12 @@ class Rectangle(Base):
         elif value < 0:
             raise ValueError("x must be >= 0")
         else:
-            self.x = value
+            self.__x = value
 
     @property
     def y(self):
         """ Getter y """
-        return self.y
+        return self.__y
 
     @y.setter
     def y(self, value):
@@ -110,4 +110,4 @@ class Rectangle(Base):
         elif value < 0:
             raise ValueError("y must be >= 0")
         else:
-            self.y = value
+            self.__y = value
