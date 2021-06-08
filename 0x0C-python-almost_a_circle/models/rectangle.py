@@ -13,6 +13,55 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def area(self):
+        """ Method that returns the area value of the
+        Rectangle instance """
+        return self.width * self.height
+
+    def display(self):
+        """ Method that print in stdout the Rectangle instance
+        with the character # by taking care of x and y  """
+        for z in range(self.y):
+            print()
+        for x in range(self.height):
+            for y in range(self.x):
+                print(" ", end="")
+            for i in range(self.width):
+                print("#", end="")
+            print()
+
+    def __str__(self):
+        """ Method that returns the following format string
+        [Rectangle] (<id>) <x>/<y> - <width>/<height>  """
+
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        """ Method that ssigns a key/value argument to attributes """
+
+        list_attr = ["id", "width", "height", "x", "y"]
+
+        if len(args) != 0:
+            for index, arg in enumerate(args):
+                setattr(self, list_attr[index], arg)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ Method that returns the dictionary representation
+        of a Rectangle """
+
+        my_dict = {
+                    "id": self.id,
+                    "width": self.width,
+                    "height": self.height,
+                    "x": self.x,
+                    "y": self.y
+                    }
+        return my_dict
+
     @property
     def width(self):
         """ Getter width """
