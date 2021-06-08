@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 """ Module to test Class Base """
 import unittest
 import models.base
