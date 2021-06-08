@@ -13,44 +13,6 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-    def area(self):
-        return self.width * self.height
-
-    def display(self):
-        for z in range(self.y):
-            print()
-        for x in range(self.height):
-            for y in range(self.x):
-                print(" ", end="")
-            for i in range(self.width):
-                print("#", end="")
-            print()
-
-    def __str__(self):
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.x, self.y, self.width, self.height)
-
-    def update(self, *args, **kwargs):
-
-        list_attr = ["id", "width", "height", "x", "y"]
-
-        if len(args) != 0:
-            for index, arg in enumerate(args):
-                setattr(self, list_attr[index], arg)
-        else:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
-
-    def to_dictionary(self):
-        my_dict = {
-                    "id": self.id,
-                    "width": self.width,
-                    "height": self.height,
-                    "x": self.x,
-                    "y": self.y
-                    }
-        return my_dict
-
     @property
     def width(self):
         """ Getter width """
