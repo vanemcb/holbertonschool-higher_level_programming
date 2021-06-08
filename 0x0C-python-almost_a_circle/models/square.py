@@ -10,6 +10,21 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         Rectangle.__init__(self, size, size, x, y, id)
 
+    @property
+    def size(self):
+        """ Getter size """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """ Setter size """
+        if type(value) != int:
+            raise TypeError("width must be an integer")
+        elif value <= 0:
+            raise ValueError("width must be > 0")
+        else:
+            self.width = value
+
     def __str__(self):
         """ Method that return the following format string:
         [Square] (<id>) <x>/<y> - <size> """
