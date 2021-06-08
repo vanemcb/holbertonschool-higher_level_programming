@@ -38,6 +38,8 @@ class Base:
         representation of list_objs to a file """
 
         filename = cls.__name__ + ".json"
+        if list_objs is None:
+            list_objs = []
         list_dict = []
         with open(filename, "w", encoding="utf-8") as file:
             for dicts in list_objs:
