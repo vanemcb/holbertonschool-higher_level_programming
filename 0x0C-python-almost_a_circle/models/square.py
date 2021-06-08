@@ -14,7 +14,7 @@ class Square(Rectangle):
         """ Method that return the following format string:
         [Square] (<id>) <x>/<y> - <size> """
 
-        return "[Square]({}) {}/{} - {}".format(
+        return "[Square] ({}) {}/{} - {}".format(
             self.id, self.x, self.y, self.width)
 
     def update(self, *args, **kwargs):
