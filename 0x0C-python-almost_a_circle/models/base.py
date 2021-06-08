@@ -42,7 +42,7 @@ class Base:
         with open(filename, "w", encoding="utf-8") as file:
             for dicts in list_objs:
                 list_dict.append(cls.to_dictionary(dicts))
-            file.write(cls.from_json_string(list_dict))
+            file.write(cls.to_json_string(list_dict))
 
     @classmethod
     def create(cls, **dictionary):
