@@ -3,6 +3,7 @@ import unittest
 
 import models.rectangle
 from models.rectangle import Rectangle
+from models.base import Base
 
 
 class TestClassRectangle(unittest.TestCase):
@@ -88,3 +89,10 @@ class TestClassRectangle(unittest.TestCase):
 
         r3 = Rectangle(20, 3, 8, 9, 23)
         self.assertEqual(r3.area(), 60)
+
+    def test_str(self):
+        r1 = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual(str(r1), "[Rectangle] (5) 3/4 - 1/2")
+
+        r2 = Rectangle(1, 2)
+        self.assertEqual(str(r2), "[Rectangle] (17) 0/0 - 1/2")
