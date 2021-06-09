@@ -56,29 +56,37 @@ class TestClassRectangle(unittest.TestCase):
         self.assertEqual(r1.height, 8)
 
     def test_errors(self):
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as out_error:
             r1 = Rectangle("5", 4)
+        self.assertEqual('width must be an integer', str(out_error.exception))
 
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError) as out_error:
             r2 = Rectangle(5, "4")
+        self.assertEqual('height must be an integer', str(out_error.exception))
 
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as out_error:
             r3 = Rectangle(0, 4)
+        self.assertEqual('width must be > 0', str(out_error.exception))
 
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as out_error:
             r4 = Rectangle(-9, 4)
+        self.assertEqual('width must be > 0', str(out_error.exception))
 
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as out_error:
             r5 = Rectangle(5, 0)
+        self.assertEqual('height must be > 0', str(out_error.exception))
 
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as out_error:
             r6 = Rectangle(5, -11)
+        self.assertEqual('height must be > 0', str(out_error.exception))
 
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError) as out_error:
             r7 = Rectangle(5, 4, 2, -9)
+        self.assertEqual('y must be >= 0', str(out_error.exception))
 
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError)as out_error:
             r8 = Rectangle(5, 4, -2, 9)
+        self.assertEqual('x must be >= 0', str(out_error.exception))
 
     def test_area(self):
         r1 = Rectangle(3, 5)
