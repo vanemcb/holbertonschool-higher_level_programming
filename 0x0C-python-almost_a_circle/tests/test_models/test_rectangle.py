@@ -45,27 +45,46 @@ class TestClassRectangle(unittest.TestCase):
         self.assertEqual(r3.x, 0)
         self.assertEqual(r3.y, 0)
 
+    def test_setter_getter(self):
+        r1 = Rectangle(1, 2)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        r1.width = 7
+        r1.height = 8
+        self.assertEqual(r1.width, 7)
+        self.assertEqual(r1.height, 8)
+
     def test_errors(self):
         with self.assertRaises(TypeError):
-            r4 = Rectangle("5", 4)
+            r1 = Rectangle("5", 4)
 
         with self.assertRaises(TypeError):
-            r5 = Rectangle(5, "4")
+            r2 = Rectangle(5, "4")
 
         with self.assertRaises(ValueError):
-            r6 = Rectangle(0, 4)
+            r3 = Rectangle(0, 4)
 
         with self.assertRaises(ValueError):
-            r7 = Rectangle(-9, 4)
+            r4 = Rectangle(-9, 4)
 
         with self.assertRaises(ValueError):
-            r8 = Rectangle(5, 0)
+            r5 = Rectangle(5, 0)
 
         with self.assertRaises(ValueError):
-            r9 = Rectangle(5, -11)
+            r6 = Rectangle(5, -11)
 
         with self.assertRaises(ValueError):
-            r10 = Rectangle(5, 4, 2, -9)
+            r7 = Rectangle(5, 4, 2, -9)
 
         with self.assertRaises(ValueError):
-            r11 = Rectangle(5, 4, -2, 9)
+            r8 = Rectangle(5, 4, -2, 9)
+
+    def test_area(self):
+        r1 = Rectangle(3, 5)
+        self.assertEqual(r1.area(), 15)
+
+        r2 = Rectangle(2, 50)
+        self.assertEqual(r2.area(), 100)
+
+        r3 = Rectangle(20, 3, 8, 9, 23)
+        self.assertEqual(r3.area(), 60)
