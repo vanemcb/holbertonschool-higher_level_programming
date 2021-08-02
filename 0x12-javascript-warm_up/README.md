@@ -1,0 +1,1 @@
+*project about JavaScript - Warm up*
