@@ -7,7 +7,7 @@ import MySQLdb
 
 db = MySQLdb.connect(
     host="localhost",
-    port=3307,
+    port=3306,
     user=argv[1],
     passwd=argv[2],
     db=argv[3]
@@ -25,4 +25,5 @@ try:
 except:
     print("Error!!")
 
+cursor.close()
 db.close()
