@@ -5,25 +5,34 @@ the database hbtn_0e_0_usa """
 from sys import argv
 import MySQLdb
 
-db = MySQLdb.connect(
-    host="localhost",
-    port=3306,
-    user=argv[1],
-    passwd=argv[2],
-    db=argv[3]
-)
+if __name__ == "__main__":
 
-cursor = db.cursor()
+    # Open database connection
+    db = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=argv[1],
+        passwd=argv[2],
+        db=argv[3]
+    )
 
-sql = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id"
+    # Cursor object
+    cursor = db.cursor()
 
-try:
+    # SQL query
+    sql = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id"
+
+    # execute SQL query
     cursor.execute(sql)
+
+    # Fetch all the rows in a list of lists
     results = cursor.fetchall()
+
+    # Print elements
     for element in results:
         print(element)
-except:
-    print("Error!!")
 
-cursor.close()
-db.close()
+    cursor.close()
+
+    # Disconnect from server
+    db.close()
