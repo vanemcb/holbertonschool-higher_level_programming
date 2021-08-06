@@ -32,7 +32,7 @@ if __name__ == "__main__":
     for element in results:
         print(element)
 
-    cursor.closed()
+    cursor.close()
 
     # Disconnect from server
     db.close()
