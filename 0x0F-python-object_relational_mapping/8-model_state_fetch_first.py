@@ -16,5 +16,9 @@ if __name__ == "__main__":
     session = Session()
 
     states = session.query(State).first()
+    len_states = session.query(State).count()
 
-    print("{}: {}".format(states.id, states.name))
+    if len_states == 0:
+        print("Nothing")
+    else:
+        print("{}: {}".format(states.id, states.name))
