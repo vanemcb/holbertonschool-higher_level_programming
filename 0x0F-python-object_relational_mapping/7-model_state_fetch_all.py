@@ -14,7 +14,6 @@ if __name__ == "__main__":
 
     Session = sessionmaker(engine)
     session = Session()
-    Base.metadata.create_all(engine)
 
     states = session.query(State).all()
 
