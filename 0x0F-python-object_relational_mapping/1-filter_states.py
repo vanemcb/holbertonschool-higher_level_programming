@@ -13,8 +13,8 @@ if __name__ == "__main__":
         port=3306,
         user=argv[1],
         passwd=argv[2],
-        db=argv[3]
-    )
+        db=argv[3],
+        )
 
     # Cursor object
     cursor = db.cursor()
@@ -30,7 +30,8 @@ if __name__ == "__main__":
 
     # Print elements
     for element in results:
-        print(element)
+        if element[1][0] == 'N':
+            print(element)
 
     cursor.close()
 
