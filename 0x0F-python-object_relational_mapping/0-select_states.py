@@ -13,7 +13,8 @@ if __name__ == "__main__":
         port=3306,
         user=argv[1],
         passwd=argv[2],
-        db=argv[3]
+        db=argv[3],
+        charset="utf8"
     )
 
     # Cursor object
@@ -21,7 +22,6 @@ if __name__ == "__main__":
 
     # SQL query
     sql = "SELECT * FROM states ORDER BY id"
-
 
     # Execute SQL query
     cursor.execute(sql)
