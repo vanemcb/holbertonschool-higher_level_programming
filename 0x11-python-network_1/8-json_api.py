@@ -15,8 +15,10 @@ if __name__ == "__main__":
     r = requests.post(url, data={'q': q})
 
     dict = r.json()
-
-    if dict == {}:
-        print("No result")
-    else:
-        print("[{}] {}".format(dict.get('id'), dict.get('name')))
+    try:
+        if dict == {}:
+            print("No result")
+        else:
+            print("[{}] {}".format(dict.get('id'), dict.get('name')))
+    except:
+        print("Not a valid JSON")
