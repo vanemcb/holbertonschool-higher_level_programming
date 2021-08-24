@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" Script taht lists 10 commits (from the most recent to oldest) of the
+repository “rails” by the user “rails”"""
 
 import requests
 from sys import argv
@@ -14,4 +16,4 @@ if __name__ == "__main__":
             print("{}: {}".format(r.json()[i].get('sha'), r.json()[
                 i].get('commit').get('author').get('name')))
     except:
-        print(end="")
+        pass
