@@ -9,6 +9,9 @@ if __name__ == "__main__":
 
     r = requests.get(url)
 
-    for i in range(10):
-        print("{}: {}".format(r.json()[i].get('sha'), r.json()[
-              i].get('commit').get('author').get('name')))
+    try:
+        for i in range(10):
+            print("{}: {}".format(r.json()[i].get('sha'), r.json()[
+                i].get('commit').get('author').get('name')))
+    except:
+        pass
