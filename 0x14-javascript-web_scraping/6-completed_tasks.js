@@ -15,7 +15,9 @@ request(process.argv[2], function (error, response, body) {
     for (const us of users) {
       if (us.userId === i && us.completed === true) { count++; }
     }
-    dict[i] = count;
+    if (count !== 0) {
+      dict[i] = count;
+    }
   }
   console.log(dict);
 });
